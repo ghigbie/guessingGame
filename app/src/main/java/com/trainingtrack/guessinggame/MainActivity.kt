@@ -14,9 +14,11 @@ class MainActivity : AppCompatActivity() {
 
         guessButton.setOnClickListener {
             val guess = editText.text.toString()
-            intent = Intent(this, ShowGuess::class.java)
-            intent.putExtra("guess", guess)
-            startActivity(intent)
+            if(guess != null) {
+                intent = Intent(this, ShowGuess::class.java)
+                intent.putExtra("guess", guess)
+                startActivity(intent)
+            }
         }
     }
 
