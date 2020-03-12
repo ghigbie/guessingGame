@@ -13,7 +13,7 @@ class MainActivity : AppCompatActivity() {
         supportActionBar?.hide()
 
         guessButton.setOnClickListener {
-            val guess = editText.text.toString()
+            val guess = editText.text.toString().trim()
             if(guess != null) {
                 intent = Intent(this, ShowGuess::class.java)
                 intent.putExtra("guess", guess)
