@@ -2,6 +2,7 @@ package com.trainingtrack.guessinggame
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import kotlinx.android.synthetic.main.activity_show_guess.*
 
 class ShowGuess : AppCompatActivity() {
 
@@ -9,6 +10,7 @@ class ShowGuess : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_show_guess)
 
-        val guess = intent.getStringExtra("guess")
+        textView.text = intent.getStringExtra("guess")
+
     }
 }

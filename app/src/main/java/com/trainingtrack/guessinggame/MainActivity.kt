@@ -12,9 +12,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         supportActionBar?.hide()
 
-        val guess = editText.text
-
         guessButton.setOnClickListener {
+            val guess = editText.text.toString()
             intent = Intent(this, ShowGuess::class.java)
             intent.putExtra("guess", guess)
             startActivity(intent)
