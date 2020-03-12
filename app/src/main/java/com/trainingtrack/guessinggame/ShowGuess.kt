@@ -10,7 +10,9 @@ class ShowGuess : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_show_guess)
 
-        textView.text = intent.getStringExtra("guess")
+        if(intent.getStringExtra("guess") != null) {
+            textView.text = intent.getStringExtra("guess")
+        }
 
     }
 }
