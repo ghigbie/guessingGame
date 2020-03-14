@@ -8,6 +8,8 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
+    val REQUEST_CODE: Int = 2
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -18,11 +20,15 @@ class MainActivity : AppCompatActivity() {
             if(!guess.isEmpty()) {
                 intent = Intent(this, ShowGuess::class.java)
                 intent.putExtra("guess", guess)
-                startActivity(intent)
+                startActivityForResult(intent, REQUEST_CODE)
             }else{
                 Toast.makeText(this, "Enter guess", Toast.LENGTH_SHORT)
             }
         }
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
     }
 
 }
