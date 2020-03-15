@@ -18,7 +18,7 @@ class ShowGuess : AppCompatActivity() {
         }
 
         textView.setOnClickListener {
-            intent.putExtra("message", "From Show Guess")
+            intent.putExtra("message", "From Show Guess Activity")
             setResult(Activity.RESULT_OK, intent)
             finish()
         }

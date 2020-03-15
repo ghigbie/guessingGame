@@ -1,5 +1,6 @@
 package com.trainingtrack.guessinggame
 
+import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -29,6 +30,13 @@ class MainActivity : AppCompatActivity() {
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
+
+        if(requestCode == REQUEST_CODE){
+            if(requestCode == Activity.RESULT_OK){
+                val message: String? = data?.getStringExtra("message")
+                Toast.makeText(this, message, Toast.LENGTH_SHORT )
+            }
+        }
     }
 
 }
